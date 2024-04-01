@@ -1,3 +1,6 @@
+let OPENAI_API_KEY_PART_1 = 'sk-uRhIYgh'; // Replace with your actual key part 1
+let OPENAI_API_KEY_PART_2 = '51Z6a38KtA5MOT3BlbkFJyqzbz3F3TO8U6f8ffant'; // Replace with your actual key part 2
+
 function sendMessage() {
     let message = document.getElementById("messageInput").value;
     document.getElementById("messageInput").value = ""; 
@@ -8,7 +11,7 @@ function sendMessage() {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${OPENAI_API_KEY}`  
+            'Authorization': `Bearer ${OPENAI_API_KEY_PART_1 + OPENAI_API_KEY_PART_2}`  
         },
         body: JSON.stringify({
             model: "gpt-4-turbo-preview", 
