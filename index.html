@@ -1,73 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Therapeutic Chatbot</title>
-    <link rel="stylesheet" type="text/css" href="style.css"> 
-    <style>
-        body {
-            background-color: #e8f5e9; /* Soft Green Background */
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-
-        .chat-container {
-            background-color: white;
-            border-radius: 8px; 
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            width: 400px;
-            padding: 20px;
-        }
-
-        .chat-messages {
-            height: 300px;
-            overflow-y: auto;
-            margin-bottom: 15px;
-        }
-
-        .message {
-            margin-bottom: 10px;
-            padding: 8px 12px;
-            border-radius: 5px;
-        }
-
-        .user-message {
-            background-color: #e8f5e9;
-            text-align: right;
-        }
-
-        .bot-message {
-            background-color: #f0f0f0;
-        }
-
-        .input-area {
-            display: flex;
-        }
-
-        #messageInput {
-            flex-grow: 1;
-            padding: 10px; 
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-right: 5px;
-        }
-    </style> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Therapy Buddy</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="chat-container">
-        <h1>Chat with Me!</h1>
-        <div class="chat-messages">
-            </div>
-        <div class="input-area">
-            <input type="text" id="messageInput" placeholder="Type your message...">
-            <button onclick="sendMessage()">Send</button>
-        </div>
+  <div class="container">
+    <div class="therapy-tabs">
+      <ul>
+        <li>
+          <a href="#" data-topic="Anxiety & Stress">
+            <i class="fas fa-sun"></i> Anxiety & Stress
+          </a>
+        </li>
+        <li>
+          <a href="#" data-topic="Depression & Mood">
+            <i class="fas fa-cloud-rain"></i> Depression & Mood
+          </a>
+        </li>
+        <li>
+          <a href="#" data-topic="Relationships">
+            <i class="fas fa-users"></i> Relationships
+          </a>
+        </li>
+        <li>
+          <a href="#" data-topic="Self-Esteem & Confidence">
+            <i class="fas fa-heart"></i> Self-Esteem & Confidence
+          </a>
+        </li>
+        <li>
+          <a href="#" data-topic="Trauma & Grief">
+            <i class="fas fa-band-aid"></i> Trauma & Grief
+          </a>
+        </li>
+        <li>
+          <a href="#" data-topic="Life Transitions">
+            <i class="fas fa-sync-alt"></i> Life Transitions
+          </a>
+        </li>
+      </ul>
+      <button id="newChatButton">New Chat</button>
     </div>
+    <div class="chat-container">
+      <h1>Therapy Buddy</h1>
+      <div class="chat-messages" aria-live="polite">
+        <div class="starter-message">
+          <p>Hi there! I'm your Therapy Buddy. Feel free to chat with me about anything that's on your mind. I'm here to listen and support you!</p>
+        </div>
+      </div>
+      <div class="input-area">
+        <input type="text" id="messageInput" placeholder="Type your message..." aria-label="Type your message">
+        <button id="sendButton">Send</button>
+      </div>
+      <div class="typing-indicator" aria-live="polite"></div>
+    </div>
+  </div>
 
-    <script src="script.js"></script> 
+  <footer>
+    <div class="theme-toggle">
+      <input type="checkbox" id="theme-switch">
+      <label for="theme-switch">Toggle Dark Mode</label>
+    </div>
+    <p>Please note that Therapy Buddy is not a substitute for professional medical advice. If you are in need of immediate assistance, please contact a qualified mental health professional.</p>
+    <p><a href="privacy-policy.html">Privacy Policy</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/433b9d3583.js" crossorigin="anonymous"></script>
 </body>
 </html>
