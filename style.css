@@ -182,3 +182,62 @@
     color: #fff;
     border-radius: 5px;
   }
+
+/* Add the following styles to the existing style.css file */
+
+.hamburger-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .therapy-tabs {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .therapy-tabs ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--message-bg-color);
+    border-top: 1px solid #ddd;
+    z-index: 1;
+  }
+
+  .therapy-tabs ul li {
+    border-bottom: 1px solid #ddd;
+  }
+
+  .therapy-tabs ul li a {
+    padding: 15px;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .hamburger-menu input[type="checkbox"] {
+    display: none;
+  }
+
+  .hamburger-menu label {
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--accent-color);
+  }
+
+  .hamburger-menu input[type="checkbox"]:checked ~ ul {
+    display: block;
+  }
+}  
